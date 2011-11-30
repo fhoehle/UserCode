@@ -2,7 +2,7 @@
 <use   name="boost_program_options"/>
 <use   name="PhysicsTools/FWLite"/>
 <use   name="PhysicsTools/UtilAlgos"/>
-<use   name="ex1/M3MassAnalyzer"/>
+<use   name="WeekExPart1/M3MassAnalyzer"/>
 <environment>
   <bin   file="FWLiteM3MassAnalyzer.cc"></bin>
 </environment>

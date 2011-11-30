@@ -9,5 +9,5 @@
   #<use   name="DataFormats/CLHEP"/>
   #<use   name="DataFormats/PatCandidates"/>
   #<use   name="PhysicsTools/SelectorUtils"/>
-  <use   name="ex1/M3MassAnalyzer"/>
+  <use   name="WeekExPart1/M3MassAnalyzer"/>
 </library>

@@ -1,4 +1,4 @@
-#include "ex1/M3MassAnalyzer/interface/M3MassAnalyzer.h"
+#include "WeekExPart1/M3MassAnalyzer/interface/M3MassAnalyzer.h"
 #include "FWCore/PythonParameterSet/interface/MakeParameterSets.h"
 #include "PhysicsTools/UtilAlgos/interface/FWLiteAnalyzerWrapper.h"
 

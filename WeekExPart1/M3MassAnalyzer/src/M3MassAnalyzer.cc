@@ -1,6 +1,6 @@
 #include "DataFormats/Common/interface/Handle.h"
 #include "DataFormats/PatCandidates/interface/Jet.h"
-#include "ex1/M3MassAnalyzer/interface/M3MassAnalyzer.h"
+#include "WeekExPart1/M3MassAnalyzer/interface/M3MassAnalyzer.h"
 
 
 /// default constructor

@@ -8,7 +8,7 @@ from PhysicsTools.PatAlgos.patTemplate_cfg import *
 from PhysicsTools.PatAlgos.tools.coreTools import *
 
 ## remove MC matching from the default sequence
-# removeMCMatching(process, ['Muons'])
+RemoveMCMatching(process, ['All'])
 # runOnData(process)
 
 ## remove certain objects from the default sequence

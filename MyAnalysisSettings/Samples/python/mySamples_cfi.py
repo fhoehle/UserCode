@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-mcatnlo_Fall11_AC = cms.untracked.vstring()
+mcatnlo_Fall11_AC = cms.untracked.vstring() #mcatnlo fall11 Pu6 start42 aodsim sample in ac
 mcatnlo_Fall11_AC.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-mcatnlo/AODSIM/PU_S6_START42_V14B-v1/0001/FED956DF-7F2A-E111-8124-002618943958.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-mcatnlo/AODSIM/PU_S6_START42_V14B-v1/0001/FE77BD53-752A-E111-AD03-002618943905.root',
@@ -1529,8 +1529,8 @@ mcatnlo_Fall11_AC.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-mcatnlo/AODSIM/PU_S6_START42_V14B-v1/0000/006394AE-F729-E111-BB9C-001A9281173E.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-mcatnlo/AODSIM/PU_S6_START42_V14B-v1/0000/0051A2ED-482A-E111-9863-0026189438F7.root',
 ])
-mcatnlo_Fall11_DESY = cms.untracked.vstring()
-mcatnlo_Fall11_DESY.extend([ 
+powheg_Fall11_DESY = cms.untracked.vstring() # powheg sample fall11 Pu6 Start42 Aodsim
+powheg_Fall11_DESY.extend([ 
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0001/FEA61EAB-6F25-E111-9330-002618943933.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0001/FE7C5EBA-3B25-E111-9531-003048FFD770.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0001/FC85141E-3925-E111-8956-002618943975.root',
@@ -1786,7 +1786,7 @@ mcatnlo_Fall11_DESY.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0001/3C55D372-5225-E111-9069-00261894389E.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0001/3A9690F0-4625-E111-BD5E-003048FFCBA8.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0001/3A51CC90-4125-E111-AEA1-001A92810AA2.root'])
-mcatnlo_Fall11_DESY.extend([
+powheg_Fall11_DESY.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0001/3A0FA930-3925-E111-A9B0-003048FFCC1E.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0001/38240B3D-4E25-E111-90E8-003048679296.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0001/36F9CED4-4C25-E111-A043-00261894393D.root',
@@ -2042,7 +2042,7 @@ mcatnlo_Fall11_DESY.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/D05DBD92-0625-E111-B826-003048D15E2C.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/D03C52AF-1125-E111-9589-001A92971BBA.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/D01386D2-D424-E111-8490-0026189438A2.root'])
-mcatnlo_Fall11_DESY.extend([
+powheg_Fall11_DESY.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/CEF0432E-3025-E111-9182-002354EF3BDD.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/CEBF9105-EC24-E111-869A-002618943829.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/CE8A5151-E824-E111-A2A3-00304867901A.root',
@@ -2298,7 +2298,7 @@ mcatnlo_Fall11_DESY.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/960E56C8-EE24-E111-939B-003048678B0A.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/9604CBDE-1225-E111-BFF8-002354EF3BDC.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/94F8ACB8-F124-E111-B3C0-003048678EE2.root'])
-mcatnlo_Fall11_DESY.extend([
+powheg_Fall11_DESY.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/9494B8BB-E224-E111-91D2-003048678E8A.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/9485FF02-FA24-E111-8DBE-002354EF3BE1.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/946B3D24-EC24-E111-AABD-0026189438D8.root',
@@ -2554,7 +2554,7 @@ mcatnlo_Fall11_DESY.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/4E92160A-F224-E111-84F9-003048FFD76E.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/4E840B24-EC24-E111-8D9E-001A92971B9A.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/4E7BA36F-E924-E111-A61A-00261894393D.root'])
-mcatnlo_Fall11_DESY.extend([
+powheg_Fall11_DESY.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/4E78B85A-FB24-E111-BDA2-002618943944.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/4E4774CE-FC24-E111-AC66-002618943978.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/4E3E6782-FF24-E111-8BC7-002618943863.root',
@@ -2810,7 +2810,7 @@ mcatnlo_Fall11_DESY.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/0EE6B0B5-E824-E111-AD05-001BFCDBD1B6.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/0EB98F36-1025-E111-BFB7-002618943894.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/0E9226E1-0E25-E111-8C5A-003048678B06.root'])
-mcatnlo_Fall11_DESY.extend([
+powheg_Fall11_DESY.extend([
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/0E8E6F05-EC24-E111-A4DE-00261894392B.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/0E662D49-3025-E111-8C97-00261894390B.root',
 '/store/mc/Fall11/TT_TuneZ2_7TeV-powheg-tauola/AODSIM/PU_S6_START42_V14B-v1/0000/0CBA4E00-F224-E111-ABAA-002618943971.root',

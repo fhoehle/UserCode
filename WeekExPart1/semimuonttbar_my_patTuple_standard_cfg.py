@@ -1,19 +1,6 @@
 ## import skeleton process
 from PhysicsTools.PatAlgos.patTemplate_cfg import *
-## ------------------------------------------------------
-#  NOTE: you can use a bunch of core tools of PAT to
-#  taylor your PAT configuration; for a few examples
-#  uncomment the lines below
-## ------------------------------------------------------
-from PhysicsTools.PatAlgos.tools.coreTools import *
-
-## remove MC matching from the default sequence
-RemoveMCMatching(process, ['All'])
-# runOnData(process)
-
-## remove certain objects from the default sequence
-# removeAllPATObjectsBut(process, ['Muons'])
-# removeSpecificPATObjects(process, ['Electrons', 'Muons', 'Taus'])
+# message logging
 process.load("FWCore.MessageLogger.MessageLogger_cfi")
 #process.MessageLogger.cerr.threshold = 'INFO'
 process.MessageLogger.cerr.FwkReport.reportEvery = 50
@@ -23,10 +10,7 @@ process.countPatMuons.maxNumber = cms.uint32(999999)
 process.countPatMuons.minNumber  = cms.uint32(1)
 process.selectedPatJets.cut = cms.string('pt > 30 & eta < 2.4')
 process.countPatJets.minNumber  = cms.uint32(4)
-##let it run
-#from RecoJets.Configuration.RecoPFJets_cff import kt6PFJets
-#process.kt6PFJets = kt6PFJets
-
+# run it
 process.p = cms.Path(
     process.patDefaultSequence
     )
@@ -39,7 +23,7 @@ process.p = cms.Path(
 #   process.GlobalTag.globaltag =  ...    ##  (according to https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideFrontierConditions)
 #                                         ##
 process.source.fileNames = [          ##
- 'rfio:/castor/cern.ch/user/f/fhohle/ttbar442/semiMuonic_ttbarSkim.root'#	'/user/f/fhohle/nonsemiMuonic_ttbarSkim.root'
+ 'rfio:/castor/cern.ch/user/f/fhohle/PatTutorialWeekExerciseSamples/ttbar_SemiMu.root'#	
 ]                                     ##  (e.g. 'file:AOD.root')
 ##
 process.maxEvents.input = -1         ##  (e.g. -1 to run on all events)

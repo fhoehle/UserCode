@@ -1,0 +1,28 @@
+Index: GeneratorInterface/LHEInterface/plugins/LHEWriter.cc
+===================================================================
+RCS file: /cvs/CMSSW/CMSSW/GeneratorInterface/LHEInterface/plugins/LHEWriter.cc,v
+retrieving revision 1.2
+diff -u -p -r1.2 LHEWriter.cc
+--- GeneratorInterface/LHEInterface/plugins/LHEWriter.cc	25 Feb 2010 00:30:53 -0000	1.2
++++ GeneratorInterface/LHEInterface/plugins/LHEWriter.cc	25 Jul 2012 20:29:47 -0000
+@@ -29,9 +29,10 @@ class LHEWriter : public edm::EDAnalyzer
+ 
+     private:
+ 	std::ofstream	file;
++	std::string fileName_;
+ };
+ 
+-LHEWriter::LHEWriter(const edm::ParameterSet &params)
++LHEWriter::LHEWriter(const edm::ParameterSet &params):fileName_(params.getUntrackedParameter<std::string>("fileName"))
+ {
+ }
+ 
+@@ -44,7 +45,7 @@ void LHEWriter::beginRun(const edm::Run 
+ 	edm::Handle<LHERunInfoProduct> product;
+ 	run.getByLabel("source", product);
+ 
+-	file.open("writer.lhe", std::fstream::out | std::fstream::trunc);
++	file.open(fileName_.c_str(), std::fstream::out | std::fstream::trunc);
+ 	std::copy(product->begin(), product->end(),
+ 	          std::ostream_iterator<std::string>(file));
+ }

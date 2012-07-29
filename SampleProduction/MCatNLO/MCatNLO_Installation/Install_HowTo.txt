@@ -1,10 +1,12 @@
 #TWiki page with detailed information:
 #https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideMCatNLOInterface
 #MCatNLO source code:
-http://www.hep.phy.cam.ac.uk/theory/webber/MCatNLO/Package341.tar.gz
+wget http://www.hep.phy.cam.ac.uk/theory/webber/MCatNLO/Package341.tar.gz
 #Necessary files:
 #adapted Makefile http://wwweth.cern.ch/fabstoec/cmsswmcatnlo/Makefile
 #SLC5 makefile: 
-http://wwweth.cern.ch/fabstoec/cmsswmcatnlo/Makefile_SLC5
-http://wwweth.cern.ch/fabstoec/cmsswmcatnlo/MCatNLO.Script
-http://wwweth.cern.ch/fabstoec/cmsswmcatnlo/MCatNLO.inputs
+wget http://wwweth.cern.ch/fabstoec/cmsswmcatnlo/Makefile_SLC5
+wget http://wwweth.cern.ch/fabstoec/cmsswmcatnlo/MCatNLO.Script
+wget http://wwweth.cern.ch/fabstoec/cmsswmcatnlo/MCatNLO.inputs
+#Usage McatNLO for noSpinCorr
+echo "if top aren't decayed by mcatnlo apply sed \"/^RMASS(19[8-9])\ =\ 0$/d\" on obtained *.events file"

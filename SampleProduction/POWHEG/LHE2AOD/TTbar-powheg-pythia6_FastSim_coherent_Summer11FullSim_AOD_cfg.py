@@ -39,7 +39,7 @@ process.options = cms.untracked.PSet(
 process.configurationMetadata = cms.untracked.PSet(
     version = cms.untracked.string('$Revision: 1.1 $'),
     annotation = cms.untracked.string('POWHEG + PYTHIA6 Tune Z2 + Tauola at 7TeV'),
-    name = cms.untracked.string('$Source: /cvs/CMSSW/CMSSW/Configuration/GenProduction/python/Attic/POWHEG_PYTHIA6_top_tauola_cff.py,v $')
+    name = cms.untracked.string('$Source: /local/reps/CMSSW/UserCode/FHoehle/SampleProduction/POWHEG/LHE2AOD/TTbar-powheg-pythia6_FastSim_coherent_Summer11FullSim_AOD_cfg.py,v $')
 )
 
 # Output definition
@@ -130,3 +130,13 @@ process.schedule.extend([process.reconstruction,process.AODSIMoutput_step])
 # filter all path with the production filter sequence
 for path in process.paths:
 	getattr(process,path)._seq = process.generator * getattr(process,path)._seq 
+##FH input output configuration
+useCrab = False
+if not useCrab:
+ from FWCore.ParameterSet.VarParsing import VarParsing
+ options = VarParsing ('analysis')
+ options.parseArguments()
+ if options.inputFiles != cms.untracked.vstring():
+  process.source.fileNames=cms.untracked.vstring(options.inputFiles)
+ if options.outputFile != None:
+  process.AODSIMoutput.fileName = cms.untracked.string(options.outputFile)

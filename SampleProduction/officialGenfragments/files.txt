@@ -1,0 +1,5 @@
+##MCatNLO official production fragment for TOP-Summer11-00120
+# http://cmssw.cvs.cern.ch/cgi-bin/cmssw.cgi/CMSSW/Configuration/GenProduction/python/TT_7TeV_mcatnlo_cff.py?view=log
+cvs co -r 1.2 Configuration/GenProduction/python/TT_7TeV_mcatnlo_cff.py
+## POWHEG official production fragment for TOP-Summer11-00101 
+cvs co -r 1.1 Configuration/GenProduction/python/POWHEG_PYTHIA6_top_tauola_cff.py

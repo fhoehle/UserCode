@@ -1,0 +1,6 @@
+# MCatNLO with spin correlation MCDB Id 5217
+xrdcp root://eoscms//eos/cms/store/lhe/5217/ttbar_mcatnlo_7TeV_cteq6m_01.lhe ttbar_mcatnlo_7TeV_cteq6m_01.lhe
+# MCatNLO without spin correlation MCDB Id 6134
+xrdcp root://eoscms//eos/cms/store/lhe/6134/TT_noCorr_7TeV_mcatnlo_herwig6.lhe TT_noCorr_7TeV_mcatnlo_herwig6.lhe
+#POWHEG with spin correlation MCDB Id 5055
+xrdcp root://eoscms//eos/cms/store/lhe/5055/TTToAnything_7TeV_16500000events.lhe TTToAnything_7TeV_16500000events.lhe

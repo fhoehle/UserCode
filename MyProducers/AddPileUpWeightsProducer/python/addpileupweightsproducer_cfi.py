@@ -1,4 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
-demo = cms.EDProducer('AddPileUpWeightsProducer'
+addPileupWeightsProducer  = = cms.EDProducer("AddPileUpWeightsProducer",
+                                  vertexSrc = cms.InputTag("offlinePrimaryVertices")
 )
+
+

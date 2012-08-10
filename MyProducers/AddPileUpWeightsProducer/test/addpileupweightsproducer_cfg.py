@@ -13,7 +13,8 @@ process.source = cms.Source("PoolSource",
     )
 )
 
-process.myProducerLabel = cms.EDProducer('AddPileUpWeightsProducer'
+process.myProducerLabel = cms.EDProducer("AddPileUpWeightsProducer",
+                                  vertexSrc = cms.InputTag("offlinePrimaryVertices")
 )
 
 process.out = cms.OutputModule("PoolOutputModule",

@@ -14,7 +14,11 @@ process.source = cms.Source("PoolSource",
 )
 
 process.myProducerLabel = cms.EDProducer("AddPileUpWeightsProducer",
-                                  vertexSrc = cms.InputTag("offlinePrimaryVertices")
+                                  vertexSrc = cms.InputTag("offlinePrimaryVertices"),
+  pileupFile1 = cms.string("$CMSSW_BASE/src/MyProducers/AddPileUpWeightsProducer/input/pileUpHistos_TTbar-SemiMu_Selected_Reconstructed.root"),
+  pileupFile2 = cms.string("$CMSSW_BASE/src/MyProducers/AddPileUpWeightsProducer/input/Test_Data_Run2011A_Pileup.root"),
+  PUHistname1 = cms.string("h1_TNPUTrue"),
+  PUHistname2 = cms.string("pileup") 
 )
 
 process.out = cms.OutputModule("PoolOutputModule",

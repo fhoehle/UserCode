@@ -13,7 +13,7 @@
 //
 // Original Author:  Felix Hoehle
 //         Created:  Thu Mar 29 00:39:36 CEST 2012
-// $Id$
+// $Id: AddPileUpWeightsProducer.cc,v 1.1 2012/08/10 13:01:34 fhohle Exp $
 //
 //
 
@@ -58,6 +58,10 @@ class AddPileUpWeightsProducer : public edm::EDProducer {
 	edm::InputTag vertexSrc_;
 
   edm::LumiReWeighting LumiWeights_;
+  std::string PileupFile1_;
+  std::string PileupFile2_;
+  std::string PUHistname2_;
+  std::string PUHistname1_;
 
       // ----------member data ---------------------------
 };
@@ -75,7 +79,11 @@ class AddPileUpWeightsProducer : public edm::EDProducer {
 // constructors and destructor
 //
 AddPileUpWeightsProducer::AddPileUpWeightsProducer(const edm::ParameterSet& iConfig):
-vertexSrc_(iConfig.getParameter<edm::InputTag>("vertexSrc"))
+vertexSrc_(iConfig.getParameter<edm::InputTag>("vertexSrc")),
+PileupFile1_(iConfig.getParameter<std::string>("pileupFile1")),
+PileupFile2_(iConfig.getParameter<std::string>("pileupFile2")),
+PUHistname1_(iConfig.getParameter<std::string>("PUHistname1")),
+PUHistname2_(iConfig.getParameter<std::string>("PUHistname2"))
 {
    //register your products
    produces<double>();
@@ -87,10 +95,17 @@ vertexSrc_(iConfig.getParameter<edm::InputTag>("vertexSrc"))
    produces<ExampleData2,InRun>();
 */
    //now do what ever other initialization is needed
-  LumiWeights_ = edm::LumiReWeighting("/user/hoehle/CMSSW/CMSSW_4_4_2_patch6/src/MyAnalysisSettings/PileUpReweighting/input/pileUpHistos_TTbar-SemiMu_Selected_Reconstructed.root",//"/uscms_data/d2/mikeh/work/CMSDAS/Fall2011_MCdist_finebin.root",
-                                      "/user/hoehle/CMSSW/CMSSW_4_4_2_patch6/src/MyAnalysisSettings/PileUpReweighting/input/Test_Data_Run2011A_Pileup.root",//"/uscms_data/d2/mikeh/work/CMSDAS/Data_May10ReReco_Pileup.root",
-                                      "h1_TNPUTrue", //"F2011exp",
-                                      "pileup");  
+  LumiWeights_ = edm::LumiReWeighting(PileupFile1_.c_str(),PileupFile2_.c_str(),PUHistname1_.c_str(),PUHistname2_.c_str());
+//"/user/hoehle/CMSSW/CMSSW_4_4_2_patch6/src/MyAnalysisSettings/PileUpReweighting/input/pileUpHistos_TTbar-SemiMu_Selected_Reconstructed.root",//"/uscms_data/d2/mikeh/work/CMSDAS/Fall2011_MCdist_finebin.root",
+//                                      "/user/hoehle/CMSSW/CMSSW_4_4_2_patch6/src/MyAnalysisSettings/PileUpReweighting/input/Test_Data_Run2011A_Pileup.root",//"/uscms_data/d2/mikeh/work/CMSDAS/Data_May10ReReco_Pileup.root",
+//                                      "h1_TNPUTrue", //"F2011exp",
+//
+//                                      "pileup");  
+//  LumiWeights_ = edm::LumiReWeighting("/afs/cern.ch/work/f/fhohle/CMSSW/CMSSW_SampleProduction/CMSSW_4_2_8_patch7/src/MyProducers/AddPileUpWeightsProducer/input/pileUpHistos_TTbar-SemiMu_Selected_Reconstructed.root",//"/uscms_data/d2/mikeh/work/CMSDAS/Fall2011_MCdist_finebin.root",
+//                                      "/afs/cern.ch/work/f/fhohle/CMSSW/CMSSW_SampleProduction/CMSSW_4_2_8_patch7/src/MyProducers/AddPileUpWeightsProducer/input/Test_Data_Run2011A_Pileup.root",//"/uscms_data/d2/mikeh/work/CMSDAS/Data_May10ReReco_Pileup.root",
+//                                      "h1_TNPUTrue", //"F2011exp",
+//                                      "pileup");
+
 }
 
 

@@ -13,7 +13,7 @@
 //
 // Original Author:  Felix Hoehle
 //         Created:  Thu Mar 29 00:39:36 CEST 2012
-// $Id: AddPileUpWeightsProducer.cc,v 1.1 2012/08/10 13:01:34 fhohle Exp $
+// $Id: AddPileUpWeightsProducer.cc,v 1.2 2012/08/11 16:34:50 fhohle Exp $
 //
 //
 
@@ -145,9 +145,14 @@ AddPileUpWeightsProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSe
       npIT = PVI->getPU_NumInteractions();
     }
   }
-
+  edm::Handle<std::vector<reco::Vertex> > recVtx;
+  iEvent.getByLabel(vertexSrc_,recVtx);
+  std::cout<<"offlinePrimVtx "<<recVtx->size()<<std::endl;
+  std::cout<<" npT "<<npT<<std::endl;
   double MyWeight = LumiWeights_.weight( npT );
-
+  std::cout<<"myPUweight "<<MyWeight<<std::endl;
+  std::cout<<"newPUWeight "<<LumiWeights_.weight( (int)recVtx->size()-1 );
+  double MyNewWeight = LumiWeights_.weight( (int)recVtx->size()-1 ); 
 //   using namespace edm;
 /* This is an event example
    //Read 'ExampleData' from the Event
@@ -158,7 +163,7 @@ AddPileUpWeightsProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSe
    // is put into the Event
    std::auto_ptr<ExampleData2> pOut(new ExampleData2(*pIn));*/
 	std::auto_ptr<double> pOut(new double());
-   *pOut=MyWeight;
+   *pOut=MyNewWeight;
    iEvent.put(pOut);
 
 

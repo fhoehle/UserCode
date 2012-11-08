@@ -6,6 +6,9 @@
 import FWCore.ParameterSet.Config as cms
 
 process = cms.Process('TestWeights')
+process.load("FWCore.MessageLogger.MessageLogger_cfi")
+process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(1000)
+
 
 # import of standard configurations
 #process.load('Configuration.StandardSequences.Services_cff')
@@ -30,7 +33,7 @@ process.options = cms.untracked.PSet(
 
 )
 
-process.analysisWeights = cms.EDAnalyzer("AnalysisWeights")
+#process.analysisWeights = cms.EDAnalyzer("AnalysisWeights")
 process.addMCWeight = cms.EDProducer("AddMCWeightProducer"
 )
 process.addPileupInfo = cms.EDProducer("AddPileUpWeightsProducer",
@@ -41,7 +44,7 @@ process.addPileupInfo = cms.EDProducer("AddPileUpWeightsProducer",
   PUHistname2 = cms.string("pileup") 
 )
 
-process.p = cms.Path(process.analysisWeights*process.addMCWeight*process.addPileupInfo)
+process.p = cms.Path(process.addMCWeight*process.addPileupInfo)
 
 process.out = cms.OutputModule("PoolOutputModule",
     fileName = cms.untracked.string('myOutputFile.root'),
